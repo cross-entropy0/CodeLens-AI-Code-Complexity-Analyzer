@@ -50,7 +50,7 @@ const Register = () => {
 
           {error && (
             <div className="mb-4 p-3 bg-red-900/50 border border-red-500 rounded-lg flex items-center space-x-2 text-red-200">
-              <FiAlertCircle className="h-5 w-5 flex-shrink-0" />
+              <FiAlertCircle className="h-5 w-5 shrink-0" />
               <span>{error}</span>
             </div>
           )}
