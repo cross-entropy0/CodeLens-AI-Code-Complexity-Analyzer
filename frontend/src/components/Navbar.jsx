@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <FiCode className="h-8 w-8 text-blue-500" />
+            <img src="/logo2.png" alt="CodeLens Logo" className="h-8 w-8 rounded-2xl" />
             <span className="text-xl font-bold text-white">CodeLens</span>
           </Link>
 
