@@ -61,8 +61,11 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 5000;
 const HOST = process.env.HOST || '0.0.0.0'; // Listen on all interfaces
 
-// Only listen in development, Vercel handles this in production
-if (process.env.NODE_ENV !== 'production') {
+// Check if running in Vercel (serverless) or traditional server
+const isVercel = process.env.VERCEL || process.env.VERCEL_ENV;
+
+// Only listen if NOT in Vercel (serverless), allow Docker production mode
+if (!isVercel) {
   app.listen(PORT, HOST, () => {
     console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
     console.log(`Accessible at http://${HOST}:${PORT}`);
