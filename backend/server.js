@@ -59,11 +59,13 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 5000;
+const HOST = process.env.HOST || '0.0.0.0'; // Listen on all interfaces
 
 // Only listen in development, Vercel handles this in production
 if (process.env.NODE_ENV !== 'production') {
-  app.listen(PORT, () => {
+  app.listen(PORT, HOST, () => {
     console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
+    console.log(`Accessible at http://${HOST}:${PORT}`);
   });
 }
 
